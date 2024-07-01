@@ -35,6 +35,7 @@
   .video-container {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: center; /* Center videos horizontally */
   }
 
   .video-container video {
@@ -110,7 +111,7 @@
 
   @media (max-width: 768px) {
     .video-container video {
-      width: 100%;
+      width: 100%; /* Ensure videos are full width on mobile */
     }
 
     marquee {
@@ -188,70 +189,79 @@
     </marquee>
     <div class="video-scroller">
       <div class="video-container">
-        <video id="video1" controls autoplay onplay="pauseScrolling()" onended="resumeScrolling(); switchVideo();">
+        <video id="video1" preload="metadata" controls>
           <source src="height.mp4" type="video/mp4">
         </video>
-        <video id="video2" controls>
+        <video id="video2" preload="metadata" controls>
           <source src="heighter.mp4" type="video/mp4">
         </video>
-        <video id="video3" controls>
+        <video id="video3" preload="metadata" controls>
           <source src="heightest.mp4" type="video/mp4">
         </video>
+        <!-- Add more videos here -->
+      </div>
+      <div class="scroll-bar">
+        <div class="scroll-handle"></div>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  const videos = document.querySelectorAll('.video-container video');
-  let currentVideoIndex = 0;
-  let isScrollingPaused = false;
-  let isVideoPlaying = false;
+  const videoScroller = document.querySelector('.video-scroller');
+  const videoContainer = document.querySelector('.video-container');
+  const videos = videoContainer.querySelectorAll('video');
+  const scrollBar = document.querySelector('.scroll-bar');
+  const scrollHandle = document.querySelector('.scroll-handle');
 
-  function switchVideo() {
-    // Hide all videos
-    videos.forEach(video => video.style.display = 'none');
+  let scrollPosition = 0;
+  let scrollWidth = videoContainer.offsetWidth;
+  let handleWidth = scrollHandle.offsetWidth;
 
-    // Calculate next video index
-    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+  videos.forEach((video, index) => {
+    video.addEventListener('play', () => {
+      // Pause other videos
+      videos.forEach((v, i) => {
+        if (i !== index) {
+          v.pause();
+        }
+      });
 
-    // Show and play next video
-    videos[currentVideoIndex].style.display = 'block';
-    videos[currentVideoIndex].play();
-
-    // Add event listener to switch again after current video ends
-    videos[currentVideoIndex].addEventListener('ended', () => {
-      if (!isScrollingPaused) {
-        switchVideo();
-      }
+      // Stop scrolling
+      videoScroller.style.overflowX = 'hidden';
     });
+
+    video.addEventListener('ended', () => {
+      // Resume scrolling
+      videoScroller.style.overflowX = 'auto';
+    });
+  });
+
+  videoScroller.addEventListener('scroll', () => {
+    scrollPosition = videoScroller.scrollLeft;
+    updateScrollBar();
+  });
+
+  scrollBar.addEventListener('mousedown', (e) => {
+    const startX = e.clientX;
+    const startScrollPosition = scrollPosition;
+
+    document.addEventListener('mousemove', (e) => {
+      const deltaX = e.clientX - startX;
+      scrollPosition = startScrollPosition + deltaX;
+      updateScrollBar();
+    });
+
+    document.addEventListener('mouseup', () => {
+      document.removeEventListener('mousemove', null);
+    });
+  });
+
+  function updateScrollBar() {
+    const scrollPercentage = (scrollPosition / (scrollWidth - videoScroller.offsetWidth)) * 100;
+    scrollHandle.style.left = `${scrollPercentage}%`;
+    videoScroller.scrollLeft = scrollPosition;
   }
-
-  function pauseScrolling() {
-    // Pause scrolling
-    isScrollingPaused = true;
-    document.querySelector('.video-scroller').style.overflow = 'hidden';
-  }
-
-  function resumeScrolling() {
-    // Resume scrolling
-    isScrollingPaused = false;
-    document.querySelector('.video-scroller').style.overflow = 'auto';
-  }
-
-  // Function to handle automatic video switching
-  function autoSwitchVideos() {
-    // Check if scrolling is paused and no video is currently playing
-    if (!isScrollingPaused && !isVideoPlaying) {
-      switchVideo();
-    }
-
-    // Schedule the next switch after 4 seconds
-    setTimeout(autoSwitchVideos, 4000);
-  }
-
-  // Start the initial switch after page load
-  autoSwitchVideos();
 </script>
 
 </body>
