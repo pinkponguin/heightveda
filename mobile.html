@@ -33,17 +33,13 @@
 
   .video-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    animation: scrollVideos 9s linear infinite;
+    flex-direction: row;
+    animation: scrollVideos 15s linear infinite;
   }
 
   .video-container video {
     margin: 10px;
-    width: 90%;
-    max-width: 320px;
+    width: 320px;
     height: auto;
   }
 
@@ -135,16 +131,10 @@
 
   @keyframes scrollVideos {
     0% {
-      transform: translateY(0%);
-    }
-    33.33% {
-      transform: translateY(-100%);
-    }
-    66.66% {
-      transform: translateY(-200%);
+      transform: translateX(0%);
     }
     100% {
-      transform: translateY(0%);
+      transform: translateX(-100%);
     }
   }
 </style>
@@ -205,13 +195,13 @@
     </marquee>
     <div class="video-scroller">
       <div class="video-container">
-        <video id="height.mp4" controls>
+        <video id="height.mp4" controls loop>
           <source src="height.mp4" type="video/mp4">
         </video>
-        <video id="heighter.mp4" controls>
+        <video id="heighter.mp4" controls loop>
           <source src="heighter.mp4" type="video/mp4">
         </video>
-        <video id="heightest.mp4" controls>
+        <video id="heightest.mp4" controls loop>
           <source src="heightest.mp4" type="video/mp4">
         </video>
       </div>
