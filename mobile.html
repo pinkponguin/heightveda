@@ -34,15 +34,14 @@
   .video-container {
     display: flex;
     justify-content: center; /* Center videos horizontally */
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    overflow: hidden;
   }
 
   .video-container video {
     margin: 10px;
     width: 320px;
     height: auto;
-    scroll-snap-align: center;
+    display: none; /* Initially hide all videos */
   }
 
   .button {
@@ -166,13 +165,13 @@
     </marquee>
     <div class="video-scroller">
       <div class="video-container">
-        <video id="height.mp4" controls onended="stopLoop();" loop>
+        <video id="video1" controls autoplay onended="switchVideo();">
           <source src="height.mp4" type="video/mp4">
         </video>
-        <video id="heighter.mp4" controls>
+        <video id="video2" controls>
           <source src="heighter.mp4" type="video/mp4">
         </video>
-        <video id="heightest.mp4" controls>
+        <video id="video3" controls>
           <source src="heightest.mp4" type="video/mp4">
         </video>
       </div>
@@ -182,13 +181,27 @@
 
 <script>
   const videos = document.querySelectorAll('.video-container video');
+  let currentVideoIndex = 0;
 
-  // Function to stop looping after first video ends
-  function stopLoop() {
-    videos.forEach(video => {
-      video.removeAttribute('loop');
-    });
+  function switchVideo() {
+    // Hide current video
+    videos[currentVideoIndex].style.display = 'none';
+
+    // Calculate next video index
+    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+
+    // Show next video
+    videos[currentVideoIndex].style.display = 'block';
+
+    // Play next video
+    videos[currentVideoIndex].play();
+
+    // Schedule the next switch after 4 seconds
+    setTimeout(switchVideo, 4000);
   }
+
+  // Start the initial switch after page load
+  switchVideo();
 </script>
 
 </body>
