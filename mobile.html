@@ -33,8 +33,8 @@
 
   .video-container {
     display: flex;
-    flex-direction: row;
-    overflow-x: scroll;
+    justify-content: center; /* Center videos horizontally */
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
   }
 
@@ -169,10 +169,10 @@
         <video id="height.mp4" controls onended="stopLoop();" loop>
           <source src="height.mp4" type="video/mp4">
         </video>
-        <video id="heighter.mp4" controls loop>
+        <video id="heighter.mp4" controls>
           <source src="heighter.mp4" type="video/mp4">
         </video>
-        <video id="heightest.mp4" controls loop>
+        <video id="heightest.mp4" controls>
           <source src="heightest.mp4" type="video/mp4">
         </video>
       </div>
