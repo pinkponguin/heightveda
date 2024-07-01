@@ -10,7 +10,6 @@
     padding: 0;
     width: 100%;
     height: 100%;
-   /* Prevent horizontal scrolling */
   }
 
   .container {
@@ -27,23 +26,45 @@
 
   .video-scroller {
     position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
     width: 100%;
-    height: 320px; /* Adjust height as needed */
-    overflow: hidden;
-    margin-bottom: 20px; /* Add some bottom margin */
   }
 
   .video-container {
     display: flex;
-    justify-content: center; /* Center videos horizontally */
-    overflow: hidden;
+    flex-wrap: nowrap;
   }
 
   .video-container video {
     margin: 10px;
-    width: 320px;
+    width: 100%;
+    max-width: 640px;
     height: auto;
-    display: none; /* Initially hide all videos */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added shadow */
+  }
+
+  .scroll-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .scroll-handle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 10px;
+    background-color: #666;
+    border-radius: 10px;
+    cursor: pointer;
   }
 
   .button {
