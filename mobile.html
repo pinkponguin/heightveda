@@ -25,18 +25,19 @@
   }
 
   .video-scroller {
-    position: justified;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    height:100%
+    position: relative;
     width: 100%;
+    height: 320px; /* Adjust height as needed */
+    overflow: hidden;
   }
 
   .video-container {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: centre;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    animation: scrollVideos 9s linear infinite;
   }
 
   .video-container video {
@@ -131,6 +132,21 @@
       font-size: 1em;
     }
   }
+
+  @keyframes scrollVideos {
+    0% {
+      transform: translateY(0%);
+    }
+    33.33% {
+      transform: translateY(-100%);
+    }
+    66.66% {
+      transform: translateY(-200%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
 </style>
 </head>
 <body>
@@ -198,51 +214,10 @@
         <video id="heightest.mp4" controls>
           <source src="heightest.mp4" type="video/mp4">
         </video>
-        <!-- Add more videos here -->
-      </div>
-      <div class="scroll-bar">
-        <div class="scroll-handle"></div>
       </div>
     </div>
   </div>
 </div>
-
-<script>
-  const videoScroller = document.querySelector('.video-scroller');
-  const videoContainer = document.querySelector('.video-container');
-  const scrollBar = document.querySelector('.scroll-bar');
-  const scrollHandle = document.querySelector('.scroll-handle');
-
-  let scrollPosition = 0;
-  let scrollWidth = videoContainer.offsetWidth;
-  let handleWidth = scrollHandle.offsetWidth;
-
-  videoScroller.addEventListener('scroll', () => {
-    scrollPosition = videoScroller.scrollLeft;
-    updateScrollBar();
-  });
-
-  scrollBar.addEventListener('mousedown', (e) => {
-    const startX = e.clientX;
-    const startScrollPosition = scrollPosition;
-
-    document.addEventListener('mousemove', (e) => {
-      const deltaX = e.clientX - startX;
-      scrollPosition = startScrollPosition + deltaX;
-      updateScrollBar();
-    });
-
-    document.addEventListener('mouseup', () => {
-      document.removeEventListener('mousemove', null);
-    });
-  });
-
-  function updateScrollBar() {
-    const scrollPercentage = (scrollPosition / (scrollWidth - videoScroller.offsetWidth)) * 100;
-    scrollHandle.style.left = `${scrollPercentage}%`;
-    videoScroller.scrollLeft = scrollPosition;
-  }
-</script>
 
 </body>
 </html>
