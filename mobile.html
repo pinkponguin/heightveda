@@ -185,6 +185,7 @@
   const videos = document.querySelectorAll('.video-container video');
   let currentVideoIndex = 0;
   let isScrollingPaused = false;
+  let isVideoPlaying = false;
 
   function switchVideo() {
     // Hide all videos
@@ -196,6 +197,13 @@
     // Show and play next video
     videos[currentVideoIndex].style.display = 'block';
     videos[currentVideoIndex].play();
+
+    // Add event listener to switch again after current video ends
+    videos[currentVideoIndex].addEventListener('ended', () => {
+      if (!isScrollingPaused) {
+        switchVideo();
+      }
+    });
   }
 
   function pauseScrolling() {
@@ -212,8 +220,8 @@
 
   // Function to handle automatic video switching
   function autoSwitchVideos() {
-    // Check if scrolling is paused, if not switch video
-    if (!isScrollingPaused) {
+    // Check if scrolling is paused and no video is currently playing
+    if (!isScrollingPaused && !isVideoPlaying) {
       switchVideo();
     }
 
