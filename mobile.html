@@ -31,6 +31,7 @@
     height: 500px;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
   }
 
   .video-item video {
@@ -96,6 +97,40 @@
     .reel-review-title {
       font-size: 18px;
     }
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 640px;
+  }
+
+  .modal-content video {
+    width: 100%;
+    height: auto;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
   }
 
   img {
@@ -267,21 +302,79 @@
       Buy 1 Get 1 Free
     </marquee>
     <div class="container">
-      <div class="reel-review-title">EXPERT VIEW</div>
+      <div class="reel-review-title">REEL REVIEW</div>
       <div class="video-section">
         <div class="video-item">
-          <video src="height.mp4" controls></video>
+          <video src="video1.mp4"></video>
         </div>
         <div class="video-item">
-          <video src="heighter.mp4" controls></video>
+          <video src="video2.mp4"></video>
         </div>
         <div class="video-item">
-          <video src="heightest.mp4" controls></video>
+          <video src="video3.mp4"></video>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<div id="videoModal" class="modal">
+  <span class="close">&times;</span>
+  <div class="modal-content">
+    <video id="modalVideo" controls></video>
+  </div>
+</div>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("videoModal");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // Get the modal video element
+  var modalVideo = document.getElementById("modalVideo");
+
+  // Function to handle video click
+  function handleVideoClick(event) {
+    var videoSrc = event.currentTarget.querySelector('video').src;
+    modalVideo.src = videoSrc;
+    modal.style.display = "block";
+    modalVideo.play();
+  }
+
+  // Attach click event to each video item
+  var videoItems = document.getElementsByClassName("video-item");
+  for (var i = 0; i < videoItems.length; i++) {
+    videoItems[i].addEventListener("click", handleVideoClick);
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+    modalVideo.pause();
+    modalVideo.src = "";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      modalVideo.pause();
+      modalVideo.src = "";
+    }
+  }
+
+  // Hide video controls initially and show them when the video starts playing
+  var videos = document.querySelectorAll('.video-item video');
+  videos.forEach(video => {
+    video.controls = false;
+    video.addEventListener('play', () => {
+      video.controls = true;
+    });
+  });
+</script>
 
 </body>
 </html>
