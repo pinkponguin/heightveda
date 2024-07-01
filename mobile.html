@@ -34,35 +34,15 @@
   .video-container {
     display: flex;
     flex-direction: row;
-    animation: scrollVideos 15s linear infinite;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
   }
 
   .video-container video {
     margin: 10px;
     width: 320px;
     height: auto;
-  }
-
-  .scroll-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    background-color: #ccc;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-
-  .scroll-handle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 10px;
-    background-color: #666;
-    border-radius: 10px;
-    cursor: pointer;
+    scroll-snap-align: center;
   }
 
   .button {
@@ -128,15 +108,6 @@
       font-size: 1em;
     }
   }
-
-  @keyframes scrollVideos {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
 </style>
 </head>
 <body>
@@ -195,7 +166,7 @@
     </marquee>
     <div class="video-scroller">
       <div class="video-container">
-        <video id="height.mp4" controls loop>
+        <video id="height.mp4" controls onended="stopLoop();" loop>
           <source src="height.mp4" type="video/mp4">
         </video>
         <video id="heighter.mp4" controls loop>
@@ -208,6 +179,17 @@
     </div>
   </div>
 </div>
+
+<script>
+  const videos = document.querySelectorAll('.video-container video');
+
+  // Function to stop looping after first video ends
+  function stopLoop() {
+    videos.forEach(video => {
+      video.removeAttribute('loop');
+    });
+  }
+</script>
 
 </body>
 </html>
