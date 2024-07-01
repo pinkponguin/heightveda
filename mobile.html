@@ -165,7 +165,7 @@
     </marquee>
     <div class="video-scroller">
       <div class="video-container">
-        <video id="video1" controls autoplay onended="switchVideo();">
+        <video id="video1" controls autoplay onplay="pauseScrolling()" onended="resumeScrolling(); switchVideo();">
           <source src="height.mp4" type="video/mp4">
         </video>
         <video id="video2" controls>
@@ -182,26 +182,45 @@
 <script>
   const videos = document.querySelectorAll('.video-container video');
   let currentVideoIndex = 0;
+  let isScrollingPaused = false;
 
   function switchVideo() {
-    // Hide current video
-    videos[currentVideoIndex].style.display = 'none';
+    // Hide all videos
+    videos.forEach(video => video.style.display = 'none');
 
     // Calculate next video index
     currentVideoIndex = (currentVideoIndex + 1) % videos.length;
 
-    // Show next video
+    // Show and play next video
     videos[currentVideoIndex].style.display = 'block';
-
-    // Play next video
     videos[currentVideoIndex].play();
+  }
+
+  function pauseScrolling() {
+    // Pause scrolling
+    isScrollingPaused = true;
+    document.querySelector('.video-scroller').style.overflow = 'hidden';
+  }
+
+  function resumeScrolling() {
+    // Resume scrolling
+    isScrollingPaused = false;
+    document.querySelector('.video-scroller').style.overflow = 'auto';
+  }
+
+  // Function to handle automatic video switching
+  function autoSwitchVideos() {
+    // Check if scrolling is paused, if not switch video
+    if (!isScrollingPaused) {
+      switchVideo();
+    }
 
     // Schedule the next switch after 4 seconds
-    setTimeout(switchVideo, 4000);
+    setTimeout(autoSwitchVideos, 4000);
   }
 
   // Start the initial switch after page load
-  switchVideo();
+  autoSwitchVideos();
 </script>
 
 </body>
