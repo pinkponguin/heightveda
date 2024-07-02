@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height Veda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f8f8;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        #main-banner {
+            text-align: center;
+            padding: 50px 20px;
+            background: url('banner.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        #main-banner .banner-content {
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #ff5722;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        #experts-view .video-container iframe,
+        #certifications .certification-images img,
+        .review-carousel .review-item video {
+            width: 100%;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contact form label,
+        #contact form input,
+        #contact form textarea,
+        #contact form button {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            #main-banner .banner-content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Height Veda Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#product">Product</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="main-banner">
+        <div class="banner-content">
+            <h1>World's No.1 Height Gainer</h1>
+            <p>54% OFF on Online Payment and Buy 1 Get 1 Free</p>
+            <a href="#product" class="cta-button">Shop Now</a>
+        </div>
+        <div class="banner-image">
+            <img src="banner.jpg" alt="Height Veda Banner">
+        </div>
+    </section>
+
+    <section id="introduction">
+        <h2>Welcome to Height Veda</h2>
+        <p>Your ultimate solution for height gain.</p>
+    </section>
+
+    <section id="experts-view">
+        <h2>Experts View</h2>
+        <div class="video-container">
+            <iframe src="video1-url" frameborder="0"></iframe>
+            <iframe src="video2-url" frameborder="0"></iframe>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="certification-images">
+            <img src="certification1.jpg" alt="AYUSH Certification">
+            <img src="certification2.jpg" alt="AYUSH Certification">
+        </div>
+    </section>
+
+    <section id="reel-reviews">
+        <h2>Reel Reviews</h2>
+        <div class="review-carousel">
+            <div class="review-item">
+                <video src="review1.mp4" controls></video>
+            </div>
+            <div class="review-item">
+                <video src="review2.mp4" controls></video>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Height Veda. All rights reserved.</p>
+    </footer>
+</body>
+</html>
