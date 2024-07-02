@@ -182,12 +182,56 @@
     color: #ccc;
   }
 </style>
+
+<style>
+  /* Rainbow Buy Now Button */
+  .rainbow-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+    animation: rainbow 6s infinite;
+    z-index: 999; /* Ensure the button is above other elements */
+  }
+
+  @keyframes rainbow {
+    0% {
+      background-color: violet;
+    }
+    14% {
+      background-color: indigo;
+    }
+    28% {
+      background-color: blue;
+    }
+    42% {
+      background-color: green;
+    }
+    57% {
+      background-color: yellow;
+    }
+    71% {
+      background-color: orange;
+    }
+    85% {
+      background-color: red;
+    }
+    100% {
+      background-color: violet;
+    }
+  }
+</style>
 </head>
 <body>
 
 <header>
- <a href="https://pinkponguin.github.io/heightveda/AC.html">
-  Buy 1 Get 1 Free</a>
+  <a href="https://pinkponguin.github.io/heightveda/AC.html">Buy 1 Get 1 Free</a>
 </header>
 
 <nav>
@@ -201,22 +245,17 @@
 <div class="container">
   <img src="heighveda.png" alt="Height Veda" class="main-image">
 </div>
-<a href="https://pinkponguin.github.io/heightveda/AC.html">
-  <marquee behavior="alternate" direction="left" bgcolor="green" scrollamount="10" style="color: white; font-size: 1.5em;">
-    54% Off* On Online Payment and Buy 1 Get 1 Free
-  </marquee>
-</a>
 
 <section class="animation-section">
   <div class="animation-container">
-     <img src="muscleman.png" alt="Image 5">
+    <img src="muscleman.png" alt="Image 5">
     <img src="heighdeva.png" alt="Image 1">
     <img src="defoworks.png" alt="Image 2">
     <img src="15 superherbs.png" alt="Image 3">
     <img src="abcd.png" alt="Image 4">
   </div>
 </section>
-  
+
 <div class="content">
   <div align="center">
     <img src="cup.png" width="200" height="300" alt="Cup">
@@ -312,8 +351,9 @@
   </div>
 </footer>
 
+<!-- JavaScript -->
 <script>
-  // Modal functionality
+  // Modal functionality (your existing script)
   var modal = document.getElementById("videoModal");
   var span = document.getElementsByClassName("close")[0];
   var modalVideo = document.getElementById("modalVideo");
@@ -344,7 +384,7 @@
     }
   }
 
-  // Show video controls on play
+  // Show video controls on play (your existing script)
   var videos = document.querySelectorAll('.video-item video');
   videos.forEach(video => {
     video.controls = false;
@@ -353,7 +393,7 @@
     });
   });
 
+</script>
+
 </body>
-	</html>
-				</div>
-				</div>
+</html>
