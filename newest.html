@@ -182,47 +182,25 @@
     color: #ccc;
   }
 
-  /* Rainbow Buy Now Button */
-  .rainbow-btn {
+  /* Fixed Buy Now Button */
+  .fixed-btn-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-    animation: rainbow 6s infinite;
-    z-index: 999; /* Ensure the button is above other elements */
+    z-index: 999;
   }
 
-  @keyframes rainbow {
-    0% {
-      background-color: violet;
-    }
-    14% {
-      background-color: indigo;
-    }
-    28% {
-      background-color: blue;
-    }
-    42% {
-      background-color: green;
-    }
-    57% {
-      background-color: yellow;
-    }
-    71% {
-      background-color: orange;
-    }
-    85% {
-      background-color: red;
-    }
-    100% {
-      background-color: violet;
-    }
+  .fixed-btn {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
   }
 </style>
 </head>
@@ -391,6 +369,11 @@
   });
 
 </script>
+
+<!-- Fixed Buy Now Button -->
+<div class="fixed-btn-container">
+  <a href="https://pinkponguin.github.io/heightveda/AC.html" class="fixed-btn">BUY NOW</a>
+</div>
 
 </body>
 </html>
