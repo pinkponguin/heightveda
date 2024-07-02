@@ -83,12 +83,10 @@
     text-align: center;
   }
 
-  .content img {
-    width: 100%;
-    max-width: 720px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+  .content img, .scroller__inner img, .video-item video {
+    width: 720px;
+    height: 1650px;
+    object-fit: cover;
   }
 
   .content h1, .content p {
@@ -120,17 +118,12 @@
   }
 
   .video-item {
-    width: 100%;
-    max-width: 300px;
+    width: 720px;
+    height: 1650px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
     margin-bottom: 20px;
-  }
-
-  .video-item video {
-    width: 100%;
-    height: auto;
   }
 
   /* Modal styles */
@@ -316,8 +309,8 @@
   }
 
   .scroller__inner img {
-    width: 1081px;
-    height: 722px;
+    width: 720px;
+    height: 1650px;
     object-fit: cover;
   }
 </style>
