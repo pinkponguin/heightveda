@@ -246,6 +246,60 @@
       font-size: 1em;
     }
   }
+
+  footer {
+    background-color: #0c401d;
+    color: #fff;
+    padding: 20px 0;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 0;
+  }
+
+  .footer-column h2, .footer-column h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-column ul li {
+    margin: 5px 0;
+  }
+
+  .footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-column ul li a:hover {
+    color: #ccc;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #092d15;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+    font-size: 0.9em;
+  }
 </style>
 </head>
 <body>
@@ -327,6 +381,43 @@
   </div>
 </div>
 
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h2>Contact</h2>
+      <ul>
+        <li>Heigh Veda</li>
+        <li>address line 1</li>
+        <li>address line 2</li>
+        <li>New Delhi</li>
+        <li>+91-97521-06788</li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h2>Social</h2>
+      <ul>
+        <li><a href="http://www.twitter.com">Twitter</a></li>
+        <li><a href="http://www.youtube.com">YouTube</a></li>
+        <li><a href="http://www.facebook.com">Facebook</a></li>
+        <li><a href="http://www.instagram.com">Instagram</a></li>
+        <li><a href="http://www.gmail.com">Gmail</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>QUICK LINKS</h3>
+      <ul>
+        <li><a href="http://www.heightveda.com">About Us</a></li>
+        <li><a href="http://www.heightveda.com">Product</a></li>
+        <li><a href="http://www.heightveda.com">Blog</a></li>
+        <li><a href="http://www.heightveda.com">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 Height Veda. All rights reserved.</p>
+  </div>
+</footer>
+
 <script>
   // Get the modal
   var modal = document.getElementById("videoModal");
@@ -377,5 +468,4 @@
   });
 </script>
 </body>
-</html>
 </html>
