@@ -100,7 +100,7 @@
   .modal {
     display: none;
     position: fixed;
-    z-index: 990;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -181,9 +181,7 @@
   .footer-column ul li a:hover {
     color: #ccc;
   }
-</style>
 
-<style>
   /* Rainbow Buy Now Button */
   .rainbow-btn {
     position: fixed;
@@ -352,7 +350,7 @@
 
 <!-- JavaScript -->
 <script>
-  // Modal functionality (your existing script)
+  // Modal functionality
   var modal = document.getElementById("videoModal");
   var span = document.getElementsByClassName("close")[0];
   var modalVideo = document.getElementById("modalVideo");
@@ -383,7 +381,7 @@
     }
   }
 
-  // Show video controls on play (your existing script)
+  // Show video controls on play
   var videos = document.querySelectorAll('.video-item video');
   videos.forEach(video => {
     video.controls = false;
