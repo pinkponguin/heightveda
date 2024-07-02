@@ -9,20 +9,20 @@
   * {
     box-sizing: border-box;
   }
-  
+
   body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0; /* Light gray background */
   }
-  
+
   /* Main container styles */
   .container {
     text-align: center;
     padding: 20px;
   }
-  
+
   /* Header styles */
   header {
     background-color: darkgreen;
@@ -31,51 +31,74 @@
     text-align: center;
     font-size: 1.2em;
   }
-  
+
   /* Navigation styles */
-*{
-			text-decoration: none;
-		}
-		.navbar{
-			background: green; font-family: calibri; padding-right: 15px;padding-left: 15px;
-		}
-		.navdiv{
-			display: flex; align-items: center; justify-content: space-between;
-		}
-		.logo a{
-			font-size: 35px; font-weight: 600; color: white; width:5px; height:5px;
-		}
-		li{
-			list-style: none; display: inline-block;
-		}
-		li a{
-			color: white; font-size: 18px; font-weight: bold; margin-right: 25px;
-		}
-		button{
-			background-color: black; margin-left: 10px; border-radius: 10px; padding: 10px; width: 90px;
-		}
-		button a{
-			color: white; font-weight: bold; font-size: 15px;
-		}
-  
+  * {
+    text-decoration: none;
+  }
+
+  .navbar {
+    background: green;
+    font-family: calibri;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    height: 40px; /* Adjust the height to match the text size */
+    width: auto;
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+  }
+
+  li a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+  }
+
+  button {
+    background-color: black;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+  }
+
+  button a {
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
   /* Main content styles */
   .content {
     padding: 20px;
     text-align: center;
   }
-  
+
   .content img {
     width: 720px;
     height: 1650px;
     display: block;
     margin: 0 auto;
   }
-  
+
   .content h1, .content p {
     margin: 10px 0;
     padding: 0;
   }
-  
+
   .content .button {
     background-color: #04AA6D;
     border: none;
@@ -89,7 +112,7 @@
     cursor: pointer;
     border-radius: 5px;
   }
-  
+
   /* Video section styles */
   .video-section {
     display: flex;
@@ -98,7 +121,7 @@
     gap: 10px;
     margin-top: 20px;
   }
-  
+
   .video-item {
     width: 100%;
     max-width: 300px;
@@ -107,12 +130,12 @@
     cursor: pointer;
     margin-bottom: 20px;
   }
-  
+
   .video-item video {
     width: 100%;
     height: auto;
   }
-  
+
   /* Modal styles */
   .modal {
     display: none;
@@ -126,7 +149,7 @@
     background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
   }
-  
+
   .modal-content {
     margin: 15% auto;
     padding: 20px;
@@ -135,12 +158,12 @@
     background-color: white;
     position: relative;
   }
-  
+
   .modal-content video {
     width: 100%;
     height: auto;
   }
-  
+
   .close {
     position: absolute;
     top: 10px;
@@ -150,7 +173,7 @@
     font-weight: bold;
     cursor: pointer;
   }
-  
+
   /* Footer styles */
   footer {
     background-color: #0c401d;
@@ -159,42 +182,42 @@
     text-align: center;
     font-size: 0.9em;
   }
-  
+
   .footer-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
   }
-  
+
   .footer-column {
     flex: 1;
     min-width: 200px;
     margin: 10px;
     text-align: left;
   }
-  
+
   .footer-column h2, .footer-column h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
     color: #fff;
   }
-  
+
   .footer-column ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
-  
+
   .footer-column ul li {
     margin: 5px 0;
   }
-  
+
   .footer-column ul li a {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s;
   }
-  
+
   .footer-column ul li a:hover {
     color: #ccc;
   }
@@ -248,17 +271,17 @@
   <a href="https://pinkponguin.github.io/heightveda/AC.html">Buy 1 Get 1 Free</a>
 </header>
 <nav class="navbar">
-		<div class="navdiv">
-			<div class="logo"><a href="#"><img src="heightveda.png" width: 10px height: 10px></a> </div>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-				<button><a href="#">SignIn</a></button>
-				<button><a href="#">SignUp</a></button>
-			</ul>
-		</div>
-	</nav>
+  <div class="navdiv">
+    <div class="logo"><a href="#"><img src="heightveda.png" alt="Logo"></a></div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <button><a href="#">SignIn</a></button>
+      <button><a href="#">SignUp</a></button>
+    </ul>
+  </div>
+</nav>
 
 <div class="container">
   <img src="heighveda.png" alt="Height Veda" class="main-image">
@@ -293,7 +316,7 @@
     <br>
     Buy 1 Get 1 Free
   </marquee>
-  
+
   <div class="video-section">
     <div class="video-item">
       <video src="height.mp4" controls></video>
