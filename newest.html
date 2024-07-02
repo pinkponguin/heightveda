@@ -1,176 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Height Veda</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-        }
-        header .logo img {
-            max-width: 150px;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 10px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-        }
-        #main-banner {
-            position: relative;
-            text-align: center;
-            color: white;
-        }
-        #main-banner .banner-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        #main-banner img {
-            width: 100%;
-            height: auto;
-        }
-        section {
-            padding: 20px;
-        }
-        .video-container iframe {
-            width: 100%;
-            height: 300px;
-        }
-        .certification-images img {
-            width: 48%;
-            margin: 1%;
-        }
-        .review-carousel .review-item video {
-            width: 100%;
-            height: auto;
-        }
-        #contact form {
-            display: flex;
-            flex-direction: column;
-        }
-        #contact form label,
-        #contact form input,
-        #contact form textarea,
-        #contact form button {
-            margin: 5px 0;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-        }
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-            }
-            nav ul {
-                flex-direction: column;
-            }
-            .certification-images img {
-                width: 100%;
-                margin: 5px 0;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Example</title>
+<style>
+  /* Reset and basic styles */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Main container styles */
+  .container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: darkgreen;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  
+  /* Navigation styles */
+  nav {
+    background-color: #E8F1E5;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Main content styles */
+  .content {
+    padding: 20px;
+  }
+  
+  .content img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .content h1, .content p {
+    margin: 10px 0;
+    padding: 0;
+  }
+  
+  .content .button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Video section styles */
+  .video-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .video-item {
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .video-item video {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+  }
+  
+  .modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 640px;
+    background-color: white;
+    position: relative;
+  }
+  
+  .modal-content video {
+    width: 100%;
+    height: auto;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: black;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #0c401d;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    text-align: left;
+  }
+  
+  .footer-column h2, .footer-column h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #ccc;
+  }
+</style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Height Veda Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#product">Product</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="main-banner">
-        <img src="banner.jpg" alt="Height Veda Banner">
-        <div class="banner-content">
-            <h1>World's No.1 Height Gainer</h1>
-            <p>54% OFF on Online Payment and Buy 1 Get 1 Free</p>
-            <a href="#product" class="cta-button">Shop Now</a>
-        </div>
-    </section>
+<header>
+  Buy 1 Get 1 Free
+</header>
 
-    <section id="introduction">
-        <h2>Welcome to Height Veda</h2>
-        <p>Your ultimate solution for height gain.</p>
-    </section>
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About Us</a>
+  <a href="#">Product</a>
+  <a href="#">Blog</a>
+  <a href="#">Contact Us</a>
+</nav>
 
-    <section id="experts-view">
-        <h2>Experts View</h2>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/sample1" frameborder="0" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/sample2" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </section>
+<div class="container">
+  <img src="heighveda.png" alt="Height Veda">
+</div>
 
-    <section id="certifications">
-        <h2>Certifications</h2>
-        <div class="certification-images">
-            <img src="certification1.jpg" alt="AYUSH Certification">
-            <img src="certification2.jpg" alt="AYUSH Certification">
-        </div>
-    </section>
+<marquee behavior="alternate" direction="left" bgcolor="green" scrollamount="10" style="color: white; font-size: 1.5em;">
+  54% Off* On Online Payment and Buy 1 Get 1 Free
+</marquee>
 
-    <section id="reel-reviews">
-        <h2>Reel Reviews</h2>
-        <div class="review-carousel">
-            <div class="review-item">
-                <video src="review1.mp4" controls></video>
-            </div>
-            <div class="review-item">
-                <video src="review2.mp4" controls></video>
-            </div>
-        </div>
-    </section>
+<div class="container">
+  <img src="defoworks.png" alt="Defoworks">
+</div>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+<div class="content">
+  <div align="center">
+    <img src="cup.png" width="200" height="300" alt="Cup">
+  </div>
+  <div class="text">
+    <h1>Height Veda- World's No.1 Height Growth Formula</h1>
+    <p>
+      Height Veda is a scientifically formulated revolutionary grow taller supplement that has all the balanced and time-tested herbs and nutrients needed for height growth of children, teenagers, women, and men between the ages of 12-35. Height Veda is a dietary food supplement which provides your bones with vital nutrition and bone regeneration techniques required to help you grow taller and reach your maximum height with 100% Safe Height Growth Formula. Height Veda helps to accelerate the functions of the body for faster growth.
+    </p>
+  </div>
+  <div align="center">
+    <a href="https://pinkponguin.github.io/heightveda/AC.html" class="button">BUY NOW</a>
+  </div>
+  <br>
+  <img src="ayush.png" alt="Ayush">
+  <br><br><br>
+  <h1 align="center"><b>What Makes Height Veda World's No.1 Height Gainer</b></h1>
+  <div align="center">
+    <img src="trust.png" alt="Trust">
+  </div>
+  <div align="center">
+    <h1>Power Of 15 Super Herbs</h1>
+    <p>Our exclusive formula combines rare and potent herbs, meticulously sourced to ensure the highest quality. These herbs have been revered in Ayurvedic practices for centuries, known for their natural properties to aid in height gain and overall wellness.</p>
+  </div>
+  <div align="center">
+    <a href="https://pinkponguin.github.io/heightveda/AC.html" class="button">BUY NOW</a>
+  </div>
+  <br><br>
+  <div align="center">
+    <img src="doktor.png" alt="Doktor">
+  </div>
+  <marquee behavior="alternate" direction="left" bgcolor="green" scrollamount="10" style="color: white; font-size: 1.5em;">
+    Height Veda- World's No.1 Height Growth Formula
+    <br>
+    Buy 1 Get 1 Free
+  </marquee>
+  
+  <div class="video-section">
+    <div class="video-item">
+      <video src="height.mp4" controls></video>
+    </div>
+    <div class="video-item">
+      <video src="heighter.mp4" controls></video>
+    </div>
+    <div class="video-item">
+      <video src="heightest.mp4" controls></video>
+    </div>
+  </div>
+</div>
 
-    <footer>
-        <p>&copy; 2024 Height Veda. All rights reserved.</p>
-    </footer>
+<!-- Modal -->
+<div id="videoModal" class="modal">
+  <span class="close">&times;</span>
+  <div class="modal-content">
+    <video id="modalVideo" controls></video>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h2>Contact</h2>
+      <ul>
+        <li>Height Veda</li>
+        <li>address line 1</li>
+        <li>address line 2</li>
+        <li>New Delhi</li>
+        <li>+91-97521-06788</li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h2>Social</h2>
+      <ul>
+        <li><a href="http://www.twitter.com">Twitter</a></li>
+        <li><a href="http://www.youtube.com">YouTube</a></li>
+        <li><a href="http://www.facebook.com">Facebook</a></li>
+        <li><a href="http://www.instagram.com">Instagram</a></li>
+        <li><a href="http://www.gmail.com">Gmail</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>QUICK LINKS</h3>
+      <ul>
+        <li><a href="http://www.heightveda.com">About Us</a></li>
+        <li><a href="http://www.heightveda.com">Product</a></li>
+        <li><a href="http://www.heightveda.com">Blog</a></li>
+        <li><a href="http://www.heightveda.com">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 Height Veda. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Modal functionality
+  var modal = document.getElementById("videoModal");
+  var span = document.getElementsByClassName("close")[0];
+  var modalVideo = document.getElementById("modalVideo");
+
+  function handleVideoClick(event) {
+    var videoSrc = event.currentTarget.querySelector('video').src;
+    modalVideo.src = videoSrc;
+    modal.style.display = "block";
+    modalVideo.play();
+  }
+
+  var videoItems = document.getElementsByClassName("video-item");
+  for (var i = 0; i < videoItems.length; i++) {
+    videoItems[i].addEventListener("click", handleVideoClick);
+  }
+
+  span.onclick = function() {
+    modal.style.display = "none";
+    modalVideo.pause();
+    modalVideo.src = "";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      modalVideo.pause();
+      modalVideo.src = "";
+    }
+  }
+
+  // Show video controls on play
+  var videos = document.querySelectorAll('.video-item video');
+  videos.forEach(video => {
+    video.controls = false;
+    video.addEventListener('play', () => {
+      video.controls = true;
+    });
+  });
+</script>
+
 </body>
 </html>
