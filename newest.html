@@ -33,10 +33,15 @@
   }
 
   /* Navigation styles */
+  * {
+    text-decoration: none;
+  }
+
   .navbar {
     background: green;
     font-family: calibri;
-    padding: 10px 15px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 
   .navdiv {
@@ -46,7 +51,7 @@
   }
 
   .logo img {
-    height: 40px;
+    height: 40px; /* Adjust the height to match the text size */
     width: 60px;
   }
 
@@ -74,7 +79,6 @@
     color: white;
     font-weight: bold;
     font-size: 15px;
-    text-decoration: none;
   }
 
   /* Main content styles */
@@ -83,10 +87,16 @@
     text-align: center;
   }
 
-  .content img, .scroller__inner img, .video-item video {
-    width: 1080px;
-    height: 722px;
-    object-fit: cover;
+  .content img {
+    width: 720px;
+    height: 1650px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .resizable {
+    width: 720px;
+    height: 1650px;
   }
 
   .content h1, .content p {
@@ -118,12 +128,17 @@
   }
 
   .video-item {
-    width: 720px;
-    height: 1650px;
+    width: 100%;
+    max-width: 300px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
     margin-bottom: 20px;
+  }
+
+  .video-item video {
+    width: 100%;
+    height: auto;
   }
 
   /* Modal styles */
@@ -236,19 +251,6 @@
 
   /* Responsive adjustments */
   @media (max-width: 768px) {
-    .navdiv {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .navdiv ul {
-      padding-left: 0;
-    }
-
-    .navdiv ul li {
-      margin-bottom: 10px;
-    }
-
     .fixed-btn-container {
       width: 100%;
       text-align: center;
@@ -261,64 +263,17 @@
       text-align: center;
     }
 
-    .content img {
+    .content img, .resizable {
       width: 100%;
       height: auto;
     }
-
-    .content .button {
-      width: 100%;
-      box-sizing: border-box;
-    }
-  }
-
-  /* Infinite Scroll Animation Styles */
-  .scroller {
-    max-width: 100%;
-    margin: 20px auto;
-    overflow: hidden;
-  }
-
-  .scroller__inner {
-    display: flex;
-    gap: 1rem;
-    animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
-    width: max-content;
-  }
-
-  .scroller[data-direction="right"] {
-    --_animation-direction: reverse;
-  }
-
-  .scroller[data-direction="left"] {
-    --_animation-direction: forwards;
-  }
-
-  .scroller[data-speed="fast"] {
-    --_animation-duration: 20s;
-  }
-
-  .scroller[data-speed="slow"] {
-    --_animation-duration: 60s;
-  }
-
-  @keyframes scroll {
-    to {
-      transform: translateX(calc(-100% - 1rem));
-    }
-  }
-
-  .scroller__inner img {
-    width: 720px;
-    height: 1650px;
-    object-fit: cover;
   }
 </style>
 </head>
 <body>
 
 <header>
-  <a href="https://pinkponguin.github.io/heightveda/AC.html" style="color: white;">Buy 1 Get 1 Free</a>
+  <a href="https://pinkponguin.github.io/heightveda/AC.html">Buy 1 Get 1 Free</a>
 </header>
 <nav class="navbar">
   <div class="navdiv">
@@ -334,34 +289,33 @@
 </nav>
 
 <div class="container">
-  <img src="heighveda.png" alt="Height Veda" class="main-image">
+  <img src="heighveda.png" alt="Height Veda" class="main-image resizable">
 </div>
 
 <section class="animation-section">
-  <div class="scroller" data-animated="true" data-speed="slow" data-direction="left">
-    <div class="scroller__inner">
-      <img src="muscleman.png" alt="Image 5">
-      <img src="defoworks.png" alt="Image 2">
-      <img src="15 superherbs.png" alt="Image 3">
-      <img src="abcd.png" alt="Image 4">
-    </div>
+  <div class="animation-container">
+    <img src="muscleman.png" alt="Image 5" class="resizable">
+    <img src="heighdeva.png" alt="Image 1" class="resizable">
+    <img src="defoworks.png" alt="Image 2" class="resizable">
+    <img src="15 superherbs.png" alt="Image 3" class="resizable">
+    <img src="abcd.png" alt="Image 4" class="resizable">
   </div>
 </section>
 
 <div class="content">
-  <img src="cup.png" alt="Cup">
+  <img src="cup.png" alt="Cup" class="resizable">
   <h1>Height Veda- World's No.1 Height Growth Formula</h1>
   <p>
     Height Veda is a scientifically formulated revolutionary grow taller supplement that has all the balanced and time-tested herbs and nutrients needed for height growth of children, teenagers, women, and men between the ages of 12-35. Height Veda is a dietary food supplement which provides your bones with vital nutrition and bone regeneration techniques required to help you grow taller and reach your maximum height with 100% Safe Height Growth Formula. Height Veda helps to accelerate the functions of the body for faster growth.
   </p>
   <a href="https://pinkponguin.github.io/heightveda/AC.html" class="button">BUY NOW</a>
-  <img src="ayush.png" alt="Ayush">
+  <img src="ayush.png" alt="Ayush" class="resizable">
   <h1><b>What Makes Height Veda World's No.1 Height Gainer</b></h1>
-  <img src="trust.png" alt="Trust">
+  <img src="trust.png" alt="Trust" class="resizable">
   <h1>Power Of 15 Super Herbs</h1>
   <p>Our exclusive formula combines rare and potent herbs, meticulously sourced to ensure the highest quality. These herbs have been revered in Ayurvedic practices for centuries, known for their natural properties to aid in height gain and overall wellness.</p>
   <a href="https://pinkponguin.github.io/heightveda/AC.html" class="button">BUY NOW</a>
-  <img src="doktor.png" alt="Doktor">
+  <img src="doktor.png" alt="Doktor" class="resizable">
   <marquee behavior="alternate" direction="left" bgcolor="green" scrollamount="10" style="color: white; font-size: 1.5em;">
     Height Veda- World's No.1 Height Growth Formula
     <br>
