@@ -330,30 +330,40 @@
 
 <div class="content">
   <img src="cup.png" alt="Cup" class="cup-image">
-  <h1>Height Veda- World's No.1 Height Growth Formula</h1>
-  <p>
-    Height Veda is a scientifically formulated revolutionary grow taller supplement to maximize height. 
-    In addition to height growth, it also promotes growth and development of the body.
+ <p>
+    Height Veda is a scientifically formulated revolutionary grow taller supplement that has all the balanced and time-tested herbs and nutrients needed for height growth of children, teenagers, women, and men between the ages of 12-35. Height Veda is a dietary food supplement which provides your bones with vital nutrition and bone regeneration techniques required to help you grow taller and reach your maximum height with 100% Safe Height Growth Formula. Height Veda helps to accelerate the functions of the body for faster growth.
   </p>
-  <a href="https://pinkponguin.github.io/heightveda/newest.html" class="button">Buy Now</a>
+  <a href="https://pinkponguin.github.io/heightveda/AC.html" class="button">BUY NOW</a>
+  <img src="ayush.png" alt="Ayush" class="resizable">
+  <h1><b>What Makes Height Veda World's No.1 Height Gainer</b></h1>
+  <img src="trust.png" alt="Trust" class="resizable">
+  <h1>Power Of 15 Super Herbs</h1>
+  <p>Our exclusive formula combines rare and potent herbs, meticulously sourced to ensure the highest quality. These herbs have been revered in Ayurvedic practices for centuries, known for their natural properties to aid in height gain and overall wellness.</p>
+  <a href="https://pinkponguin.github.io/heightveda/AC.html" class="button">BUY NOW</a>
+  <img src="doktor.png" alt="Doktor" class="resizable">
+  <marquee behavior="alternate" direction="left" bgcolor="green" scrollamount="10" style="color: white; font-size: 1.5em;">
+    Height Veda- World's No.1 Height Growth Formula
+    <br>
+    Buy 1 Get 1 Free
+  </marquee>
+
+  <div class="video-section">
+    <div class="video-item">
+      <video src="height.mp4" controls></video>
+    </div>
+    <div class="video-item">
+      <video src="heighter.mp4" controls></video>
+    </div>
+    <div class="video-item">
+      <video src="heightest.mp4" controls></video>
+    </div>
+  </div>
 </div>
 
-<div class="video-section">
-  <div class="video-item" onclick="openModal('video1')">
-    <video src="video1.mp4" muted></video>
-  </div>
-  <div class="video-item" onclick="openModal('video2')">
-    <video src="video2.mp4" muted></video>
-  </div>
-  <div class="video-item" onclick="openModal('video3')">
-    <video src="video3.mp4" muted></video>
-  </div>
-</div>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
+<!-- Modal -->
+<div id="videoModal" class="modal">
+  <span class="close">&times;</span>
   <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
     <video id="modalVideo" controls></video>
   </div>
 </div>
@@ -362,54 +372,51 @@
   <div class="footer-container">
     <div class="footer-column">
       <h2>About Us</h2>
-      <p>Height Veda is the best solution for increasing height naturally.</p>
-    </div>
-    <div class="footer-column">
-      <h2>Quick Links</h2>
-      <ul>
-        <li><a href="https://pinkponguin.github.io/heightveda/newest.html">Home</a></li>
-        <li><a href="https://pinkponguin.github.io/heightveda/aboutus.html">About</a></li>
-        <li><a href="https://pinkponguin.github.io/heightveda/contactus.html">Contact</a></li>
-      </ul>
+      <p>We are a leading company in the height growth industry, providing top-notch products and services to help individuals achieve their height goals.</p>
     </div>
     <div class="footer-column">
       <h2>Contact Us</h2>
-      <p>Email: contact@heightveda.com</p>
-      <p>Phone: +123456789</p>
+      <ul>
+        <li><a href="#">Email: info@heightveda.com</a></li>
+        <li><a href="#">Phone: +123 456 7890</a></li>
+        <li><a href="#">Address: 123 Height Street, Growth City</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h2>Follow Us</h2>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
     </div>
   </div>
+  <p>&copy; 2024 Height Veda. All rights reserved.</p>
 </footer>
 
-<!-- Fixed Buy Now Button -->
 <div class="fixed-btn-container">
-  <a href="https://pinkponguin.github.io/heightveda/newest.html" class="fixed-btn">Buy Now</a>
+  <a href="https://pinkponguin.github.io/heightveda/AC.html" class="fixed-btn">🛒 Order Now - Cash On Delivery</a>
 </div>
 
 <script>
   // Modal script
-  function openModal(videoId) {
-    var modal = document.getElementById("myModal");
-    var modalVideo = document.getElementById("modalVideo");
-    modal.style.display = "block";
-    modalVideo.src = videoId + ".mp4";
-    modalVideo.play();
-  }
+  var modal = document.getElementById('videoModal');
+  var modalVideo = document.getElementById('modalVideo');
+  var closeBtn = document.getElementsByClassName('close')[0];
 
-  function closeModal() {
-    var modal = document.getElementById("myModal");
-    var modalVideo = document.getElementById("modalVideo");
-    modal.style.display = "none";
+  document.querySelectorAll('.video-item video').forEach(function(video) {
+    video.addEventListener('click', function() {
+      modal.style.display = 'block';
+      modalVideo.src = this.src;
+    });
+  });
+  closeBtn.onclick = function() {
+    modal.style.display = 'none';
     modalVideo.pause();
-    modalVideo.src = "";
-  }
-
-  window.onclick = function(event) {
-    var modal = document.getElementById("myModal");
+  }  window.onclick = function(event) {
     if (event.target == modal) {
-      closeModal();
-    }
-  }
-</script>
-
+      modal.style.display = 'none';
+      modalVideo.pause();
+    }  }</script>
 </body>
 </html>
