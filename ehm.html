@@ -174,6 +174,31 @@ user-select: none;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0; /* Light gray background */
   }
+	.order-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f44336; /* Red background color */
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: shake 0.5s infinite;
+  }
+
+.order-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+  }
+
+  @keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, 0); }
+    50% { transform: translate(5px, 0); }
+    75% { transform: translate(-5px, 0); }
+    100% { transform: translate(0, 0); }
+  }
 
   /* Main container styles */
   .container {
@@ -639,6 +664,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>			
  <div class="content">
     <br>
+	 <div class="content,resizable">
     <img src="ayush.png" alt="Ayush"><br><br><br>
     <h1 align="center"><b>What Makes Height Veda World's No.1 Height Gainer</b></h1>
     <div align="center"><img src="trust.png" alt="Trust"></div><br><br>
@@ -749,6 +775,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 									</div>
 		</noscript>
+	<button class="order-button">🛒 Order Now - Cash On Delivery</button>
     <div class="container">
       <div class="reel-review-title">EXPERT VIEW</div>
       <div class="video-section">
