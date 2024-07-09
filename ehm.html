@@ -171,25 +171,34 @@ user-select: none;
 
 }
 
-  body {
+
+   body {
     margin: 0;
     padding: 0;
-    font-family: MuseoModerno;
+   font-family: MuseoModerno;
+    min-height: 100vh;
     background-color: #f0f0f0; /* Light gray background */
-  }
-	.order-button {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+   }
+.order-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 10px 20px;
     background-color: #f44336; /* Red background color */
     color: white;
-    font-size: 16px;
-    text-align: center;
     border: none;
     border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
+     display: inline-block;
+     text-align: center;
     transition: background-color 0.3s ease;
     animation: shake 0.5s infinite;
-  }
+ }
 
 .order-button:hover {
     background-color: #d32f2f; /* Darker red on hover */
