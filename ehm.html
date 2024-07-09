@@ -110,46 +110,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" href="https://heightveda.com/wp-content/uploads/2024/04/cropped-Fav-192x192.webp" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://heightveda.com/wp-content/uploads/2024/04/cropped-Fav-180x180.webp" />
 <meta name="msapplication-TileImage" content="https://heightveda.com/wp-content/uploads/2024/04/cropped-Fav-270x270.webp" />
-<style id="wp-custom-css">
-  @keyframes blink {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.8;
-    }
+		<style id="wp-custom-css">
+			@keyframes blink {
+  0% {
+    opacity: 1;
   }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-  .sub-leads {
-    width: 100%;
-    color: #FFF;
-    background: #03441F;
-    border: 1px solid #FFF;
-    font-size: 18px;
-    padding: 15px 0px 15px 0px;
-    animation: blink 1s infinite;
-  }
+.sub-leads
+{
+	width: 100%;
+	color:#FFF;
+	background:#03441F;
+	border:1px solid #FFF;
+	font-size: 18px;
+	padding:15px 0px 15px 0px;
+ animation: blink 1s infinite;
+}
 
-  .sub-leads:hover {
-    width: 100%;
-    color: #03441F;
-    background: #FFF;
-    border: 1px solid #03441F;
-    padding: 15px 0px 15px 0px;
-  }
 
-  .wpforms-container .wpforms-field-label {
-    margin-bottom: 10px;
-  }
+.sub-leads:hover
+{
+	width: 100%;
+	color:#03441F;
+	background:#FFF;
+	border:1px solid #03441F;
+	padding:15px 0px 15px 0px;
+}
 
-  body {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-  }
+.wpforms-container .wpforms-field-label
+{
+	margin-bottom:10px;	
+}
+
+
+body
+{
+	-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}		
+		
 		<!-- Global site tag (gtag.js) - Google Ads: AW-11471446616 - Google Listings & Ads -->
 		<script src="https://www.googletagmanager.com/gtag/js?id=AW-11471446616" defer data-deferred="1"></script>
 		<script src="data:text/javascript;base64,d2luZG93LmRhdGFMYXllcj13aW5kb3cuZGF0YUxheWVyfHxbXTtmdW5jdGlvbiBndGFnKCl7ZGF0YUxheWVyLnB1c2goYXJndW1lbnRzKX0KZ3RhZygnY29uc2VudCcsJ2RlZmF1bHQnLHthbmFseXRpY3Nfc3RvcmFnZTonZGVuaWVkJyxhZF9zdG9yYWdlOidkZW5pZWQnLGFkX3VzZXJfZGF0YTonZGVuaWVkJyxhZF9wZXJzb25hbGl6YXRpb246J2RlbmllZCcscmVnaW9uOlsnQVQnLCdCRScsJ0JHJywnSFInLCdDWScsJ0NaJywnREsnLCdFRScsJ0ZJJywnRlInLCdERScsJ0dSJywnSFUnLCdJUycsJ0lFJywnSVQnLCdMVicsJ0xJJywnTFQnLCdMVScsJ01UJywnTkwnLCdOTycsJ1BMJywnUFQnLCdSTycsJ1NLJywnU0knLCdFUycsJ1NFJywnR0InLCdDSCddLHdhaXRfZm9yX3VwZGF0ZTo1MDAsfSk7Z3RhZygnanMnLG5ldyBEYXRlKCkpO2d0YWcoJ3NldCcsJ2RldmVsb3Blcl9pZC5kT0dZM05XJywhMCk7Z3RhZygiY29uZmlnIiwiQVctMTE0NzE0NDY2MTYiLHsiZ3JvdXBzIjoiR0xBIiwic2VuZF9wYWdlX3ZpZXciOiExfSk=" defer</script>
@@ -160,29 +170,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
+}
+
+
+   body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-  }
-
-  .order-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f44336;
+   font-family: MuseoModerno;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Light gray background */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+   }
+.order-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    padding: 30px 50px;
+    background-color: #f44336; /* Red background color */
     color: white;
+    border: 1;
+    border-radius: 6px;
     font-size: 16px;
-    text-align: center;
-    border: none;
-    border-radius: 4px;
     cursor: pointer;
+     text-align: center;
     transition: background-color 0.3s ease;
     animation: shake 0.5s infinite;
-  }
+ }
 
-  .order-button:hover {
-    background-color: #d32f2f;
+.order-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
   }
 
   @keyframes shake {
@@ -193,10 +211,12 @@ body {
     100% { transform: translate(0, 0); }
   }
 
+  /* Main container styles */
   .container {
     text-align: center;
   }
 
+  /* Header styles */
   header {
     background-color: darkgreen;
     color: white;
@@ -205,6 +225,7 @@ body {
     font-size: 1.2em;
   }
 
+  /* Navigation styles */
   * {
     text-decoration: none;
   }
@@ -223,7 +244,7 @@ body {
   }
 
   .logo img {
-    height: 40px;
+    height: 40px; /* Adjust the height to match the text size */
     width: 60px;
   }
 
@@ -253,6 +274,7 @@ body {
     font-size: 15px;
   }
 
+  /* Main content styles */
   .content {
     padding: 20px;
     text-align: center;
@@ -261,7 +283,7 @@ body {
   .content img {
     display: block;
     margin: 0;
-    max-width: 100%;
+    max-width:100%;
     height: 100px;
     width: 100px;
   }
@@ -272,8 +294,8 @@ body {
   }
 
   .main-image {
-    width: 720px;
-    height: 405px;
+    width: 720px; /* Set to the desired width */
+    height: 405px; /* Set to the desired height */
   }
 
   .cup-image {
@@ -300,6 +322,7 @@ body {
     border-radius: 5px;
   }
 
+  /* Video section styles */
   .video-section {
     display: flex;
     flex-wrap: wrap;
@@ -320,6 +343,7 @@ body {
     height: 200px;
   }
 
+  /* Modal styles */
   .modal {
     display: none;
     position: fixed;
@@ -357,6 +381,7 @@ body {
     cursor: pointer;
   }
 
+  /* Footer styles */
   footer {
     background-color: #0c401d;
     color: #fff;
@@ -404,35 +429,41 @@ body {
     color: #ccc;
   }
 
+  /* Fixed Buy Now Button */
   .fixed-btn-container {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
-    text-align: center;
   }
 
   .fixed-btn {
-    background-color: #f44336;
+    background-color: #f44336; /* Red background color */
     border: none;
     color: white;
-    padding: 20px 40px;
+    padding: 30px 50px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 24px;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
   }
 
-  @media (max-width: 768px) {
+  /* Responsive adjustments */
+  @media{
     .fixed-btn-container {
       width: 100%;
       text-align: center;
-      left: 0;
       transform: none;
     }
+	  @media{
+    .order-now {
+        width: 100%; /* Adjust width for mobile */
+        bottom: 10px; /* Adjust bottom spacing for mobile */
+    }
+}
 
     .footer-container {
       flex-direction: column;
@@ -445,6 +476,7 @@ body {
     }
   }
 
+  /* Animation Section */
   .animation-section {
     overflow: hidden;
     white-space: nowrap;
@@ -459,8 +491,8 @@ body {
   .animation-container img {
     display: inline-block;
     vertical-align: middle;
-    width: 600px;
-    height: 200px;
+    width: 600px; /* Set to the desired width */
+    height: 200px; /* Set to the desired height */
   }
 
   @keyframes scroll-animation {
@@ -472,7 +504,6 @@ body {
     }
   }
 </style>
-
 </head>
 <body>
 <body class="home page-template page-template-elementor_header_footer page page-id-18321 theme-hello-elementor woocommerce-no-js elementor-default elementor-template-full-width elementor-kit-113 elementor-page elementor-page-18321">
@@ -760,9 +791,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 									</div>
 		</noscript>
-	<div class="fixed-btn-container">
-  <button class="fixed-btn">Order Now</button>
-</div>
+	<button class="order-button">🛒 Order Now - Cash On Delivery</button>
 <!-- Modal -->
 <div id="videoModal" class="modal">
   <span class="close">&times;</span>
