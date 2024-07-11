@@ -529,6 +529,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <script>
+	    var xhr = new XMLHttpRequest();
+    xhr.open("POST", this.action);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          // Successful response
+          var response = xhr.responseText;
+          showModal(response); // Show the modal with the response message
+          document.getElementById("myForm").reset(); //Clear the form fields
+        } else {
+          // Error response
+          showModal("Error: Something went wrong."); // Show a generic error message
+        }
+      }
+    };
+    xhr.send(new FormData(this));
+  });
         document.getElementById('shippingForm').addEventListener('submit', function(event) {
             event.preventDefault();
             alert('Form submitted!');
