@@ -204,6 +204,163 @@ user-select: none;
 			gtag('js', new Date());
 			gtag('set', 'developer_id.dOGY3NW', true);
 			gtag("config", "AW-11471446616", { "groups": "GLA", "send_page_view": false });		</script>
+	
+   <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px;
+        }
+
+        .container, .order-summary {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        h2, h3 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input[readonly] {
+            background-color: #e9e9e9;
+        }
+
+        .form-group .required {
+            color: red;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #039f5b;
+        }
+
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .order-summary table th,
+        .order-summary table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .order-summary table th {
+            background-color: #f9f9f9;
+            font-weight: bold;
+        }
+
+        .order-summary table td {
+            background-color: #fff;
+        }
+
+        .order-summary .total {
+            font-weight: bold;
+        }
+
+        .order-summary .coupon {
+            color: red;
+        }
+
+        .order-summary .free-shipping {
+            color: green;
+        }
+
+        .place-order-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #6200ea;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .place-order-btn:hover {
+            background-color: #4e00b3;
+        }
+
+        @media (min-width: 768px) {
+            .main-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+
+            .container, .order-summary {
+                width: 48%;
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .main-container {
+                flex-direction: column;
+            }
+
+            .container, .order-summary {
+                width: 100%;
+            }
+
+            .order-summary {
+                overflow-y: auto;
+                max-height: 300px;
+            }
+        }
+    </style>
 
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
 <body class="page-template page-template-elementor_canvas page page-id-20499 theme-hello-elementor woocommerce-cart woocommerce-page woocommerce-no-js elementor-default elementor-template-canvas elementor-kit-113 elementor-page elementor-page-20499">
@@ -261,6 +418,131 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 				</div>
 				</div>
+    <div class="main-container">
+        <div class="container">
+            <h2>Billing and Shipping Details</h2>
+            <form id="shippingForm">
+                <div class="form-group">
+                    <label for="firstName">First Name <span class="required">*</span></label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name <span class="required">*</span></label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country / Region <span class="required">*</span></label>
+                    <input type="text" id="country" name="country" value="India" required readonly>
+                </div>
+                <div class="form-group">
+                    <label for="streetAddress">Street address <span class="required">*</span></label>
+                    <input type="text" id="streetAddress" name="streetAddress" placeholder="House number and street name" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">Town / City <span class="required">*</span></label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State <span class="required">*</span></label>
+                    <select id="state" name="state" required>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pinCode">PIN Code <span class="required">*</span></label>
+                    <input type="text" id="pinCode" name="pinCode" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone <span class="required">*</span></label>
+                    <input type="text" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="order-summary">
+            <h3>Your Order</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Height Veda- Supreme Height Growth Formula × 1</td>
+                        <td>₹2,899.00</td>
+                    </tr>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td>₹2,899.00</td>
+                    </tr>
+                    <tr>
+                        <td>Coupon: growmore</td>
+                        <td class="coupon">-₹434.85, Free shipping coupon</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td class="free-shipping">Free shipping</td>
+                    </tr>
+                    <tr class="total">
+                        <td>Total</td>
+                        <td>₹2,464.15</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="place-order-btn">Place order</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('shippingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted!');
+            // Add your form submission logic here
+        });
+
+        document.querySelector('.place-order-btn').addEventListener('click', function() {
+            alert('Order placed!');
+            // Add your order placement logic here
+        });
+    </script>
+</body>
+</html>
+
 				<div class="elementor-element elementor-element-9e63ef2 e-checkout-layout-two-column elementor-widget elementor-widget-woocommerce-checkout-page" data-id="9e63ef2" data-element_type="widget" data-settings="{&quot;sticky_right_column&quot;:&quot;yes&quot;}" data-widget_type="woocommerce-checkout-page.default">
 				<div class="elementor-widget-container">
 			<link rel="stylesheet" href="https://heightveda.com/wp-content/plugins/pro-elements/assets/css/widget-woocommerce.min.css"><div class="woocommerce"><div class="woocommerce-notices-wrapper"></div><div class="woocommerce-notices-wrapper"></div><div class="wt_coupon_wrapper"><style type="text/css">.wt_sc_single_coupon{ display:inline-block; width:300px; max-width:100%; height:auto; padding:5px; text-align:center; background:#2890a8; color:#ffffff; position:relative; }
