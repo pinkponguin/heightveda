@@ -183,38 +183,27 @@ user-select: none;
     flex-direction: column;
     justify-content: flex-end;
    }
+			
+.order-now-btn {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 55px;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    /* Optional: Styling for the button */
+    background-color: #ff0000; /* Example background color */
+    color: #fff; /* Example text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer; /* Change cursor to pointer */
+ }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-			
-.order-button {
-    width: 30px;
-    height: 50px;
-    /* Additional styling for the button */
-    background-color: #ff0000; /* Example color */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-}
-			
 .order-button:hover {
     background-color: #d32f2f; /* Darker red on hover */
   }
-			
-.order-button-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-}
+
   @keyframes shake {
     0% { transform: translate(0, 0); }
     25% { transform: translate(-5px, 0); }
@@ -393,7 +382,63 @@ html, body {
     cursor: pointer;
   }
 
- 
+  /* Footer styles */
+  footer {
+    background-color: #0c401d;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    text-align: left;
+  }
+
+  .footer-column h2, .footer-column h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-column ul li {
+    margin: 5px 0;
+  }
+
+  .footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-column ul li a:hover {
+    color: #ccc;
+  }
+
+  /* Fixed Buy Now Button */
+  .fixed-btn-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+  }
+
   .fixed-btn {
     background-color: #f44336; /* Red background color */
     border: none;
@@ -747,9 +792,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 									</div>
 		</noscript>
-	<div class="order-button-container">
-    <button class="order-button">Order Now</button>
-</div>
+	<button class="order-button">🛒 Order Now - Cash On Delivery</button>
 <!-- Modal -->
 <div id="videoModal" class="modal">
   <span class="close">&times;</span>
