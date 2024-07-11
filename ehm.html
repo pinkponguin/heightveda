@@ -183,20 +183,21 @@ user-select: none;
     flex-direction: column;
     justify-content: flex-end;
    }
-.order-button {
+			
+.order-now-btn {
     position: fixed;
-    bottom: 20px;
+    bottom: 0;
     left: 50%;
-    padding: 30px 50px;
-    background-color: #f44336; /* Red background color */
-    color: white;
-    border: 1;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-     text-align: center;
-    transition: background-color 0.3s ease;
-    animation: shake 0.5s infinite;
+    transform: translateX(-50%);
+    height: 55px;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    /* Optional: Styling for the button */
+    background-color: #ff0000; /* Example background color */
+    color: #fff; /* Example text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer; /* Change cursor to pointer */
  }
 
 .order-button:hover {
