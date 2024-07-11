@@ -183,22 +183,19 @@ user-select: none;
     flex-direction: column;
     justify-content: flex-end;
    }
-			
-.order-now-btn {
+.order-button {
     position: fixed;
-    bottom: 0;
+    bottom: 20px;
     left: 50%;
-    right:50%;
-    transform: translateX(-50%);
-    height: 55px;
-    z-index: 1001; /* Ensure it stays on top of other elements */
-    /* Optional: Styling for the button */
-    background-color: #ff0000; /* Example background color */
-    color: #fff; /* Example text color */
-    border: none; /* Remove border */
-    padding: 10px 20px; /* Adjust padding as needed */
-    font-size: 16px; /* Adjust font size as needed */
-    cursor: pointer; /* Change cursor to pointer */
+    background-color: #f44336; /* Red background color */
+    color: white;
+    border: 1;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+     text-align: center;
+    transition: background-color 0.3s ease;
+    animation: shake 0.5s infinite;
  }
 
 .order-button:hover {
@@ -802,6 +799,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h2>Contact</h2>
+      <ul>
+        <li>Height Veda</li>
+        <li>address line 1</li>
+        <li>address line 2</li>
+        <li>New Delhi</li>
+        <li>+91-97521-06788</li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h2>Social</h2>
+      <ul>
+        <li><a href="http://www.twitter.com">Twitter</a></li>
+        <li><a href="http://www.youtube.com">YouTube</a></li>
+        <li><a href="http://www.facebook.com">Facebook</a></li>
+        <li><a href="http://www.instagram.com">Instagram</a></li>
+        <li><a href="http://www.gmail.com">Gmail</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>QUICK LINKS</h3>
+      <ul>
+        <li><a href="http://www.heightveda.com">About Us</a></li>
+        <li><a href="http://www.heightveda.com">Product</a></li>
+        <li><a href="http://www.heightveda.com">Blog</a></li>
+        <li><a href="http://www.heightveda.com">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 Height Veda. All rights reserved.</p>
+  </div>
+</footer>
 
 <script>
   // Get the modal
