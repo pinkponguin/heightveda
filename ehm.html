@@ -448,6 +448,18 @@ user-select: none;
     cursor: pointer;
     border-radius: 10px;
   }
+ .fixed-btn {
+    background-color: #f44336; /* Red background color */
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
 
   /* Responsive adjustments */
   @media{
@@ -472,7 +484,19 @@ user-select: none;
       width: 100%;
       height: auto;
     }
-  }
+  } /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .navdiv {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .fixed-btn-container {
+      width: 100%;
+      text-align: center;
+      left: 0;
+      transform: none;
+    }
 
   /* Animation Section */
   .animation-section {
@@ -789,7 +813,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 									</div>
 		</noscript>
-	<button class="order-button">🛒 Order Now - Cash On Delivery</button>
+	<div class="fixed-btn-container">
+  <a href="https://pinkponguin.github.io/heightveda/AC.html" class="fixed-btn">🛒 Order Now - Cash On Delivery</a>
+</div>
 <!-- Modal -->
 <div id="videoModal" class="modal">
   <span class="close">&times;</span>
