@@ -421,7 +421,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="main-container">
         <div class="container">
             <h2>Billing and Shipping Details</h2>
-            <form id="idform"  method="post" action=https://script.google.com/macros/s/AKfycbxlyGKkoOe5-LxSo1YP_AYRL7H7_x4sdBzkxm2-uDtFsezPKsVBFKkYzcgbd7UYzC8P/exec name="Billing And Shipping Details">
+            <form id="shippingForm" method="post" action="https://script.google.com/macros/s/AKfycbxlyGKkoOe5-LxSo1YP_AYRL7H7_x4sdBzkxm2-uDtFsezPKsVBFKkYzcgbd7UYzC8P/exec"
+                name="Billing And Shipping Details">
                 <div class="form-group">
                     <label for="firstName">First Name <span class="required">*</span></label>
                     <input type="text" id="firstName" name="firstName" required>
@@ -436,14 +437,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <div class="form-group">
                     <label for="streetAddress">Street address <span class="required">*</span></label>
-                    <input type="text" id="streetAddress" name="streetAddress" placeholder="House number and street name" required>
+                    <input type="text" id="streetAddress" name="streetAddress" placeholder="House number and street name"
+                        required>
                 </div>
                 <div class="form-group">
                     <label for="city">Town / City <span class="required">*</span></label>
                     <input type="text" id="city" name="city" required>
                 </div>
                 <div class="form-group">
-                    <label for="state">State <span class="required">*</span></label>
+                    <label for="state">State / Union Territory <span class="required">*</span></label>
                     <select id="state" name="state" required>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -473,6 +475,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <option value="Uttar Pradesh">Uttar Pradesh</option>
                         <option value="Uttarakhand">Uttarakhand</option>
                         <option value="West Bengal">West Bengal</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Ladakh">Ladakh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -529,33 +539,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <script>
-	    var xhr = new XMLHttpRequest();
-    xhr.open("POST", this.action);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          // Successful response
-          var response = xhr.responseText;
-          showModal(response); // Show the modal with the response message
-          document.getElementById("myForm").reset(); //Clear the form fields
-        } else {
-          // Error response
-          showModal("Error: Something went wrong."); // Show a generic error message
-        }
-      }
-    };
-    xhr.send(new FormData(this));
-  });
-        document.getElementById('shippingForm').addEventListener('submit', function(event) {
+        document.getElementById('shippingForm').addEventListener('submit', function (event) {
             event.preventDefault();
-            alert('Form submitted!');
-            // Add your form submission logic here
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", this.action);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        alert('Form submitted successfully!');
+                        document.getElementById("shippingForm").reset(); // Clear the form fields
+                    } else {
+                        alert('Error: Something went wrong.');
+                    }
+                }
+            };
+            xhr.send(new FormData(this));
         });
 
-        document.querySelector('.place-order-btn').addEventListener('click', function() {
+        document.querySelector('.place-order-btn').addEventListener('click', function () {
             alert('Order placed!');
             // Add your order placement logic here
         });
     </script>
 </body>
+
 </html>
