@@ -421,7 +421,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="main-container">
         <div class="container">
             <h2>Billing and Shipping Details</h2>
-            <form id="shippingForm" action="https://script.google.com/macros/s/AKfycbyJn94EXBsP92fcbWDyVhQ1N-U9Aec5RBC5wAnNd1AKA1kfxxU3p2NiGiGJ_MEEQbTp/exec" method="post">
+            <form id="shippingForm" action="https://script.google.com/macros/s/AKfycbxmnLpABUbdR5JNJjmThPySGIxkRYj7ijGu29yrdABB5K71ubGwN1nW7Zh4NjmJxA/exec" method="post">
                 <!-- Your existing form fields here -->
                 <div class="form-group">
                     <label for="firstName">First Name <span class="required">*</span></label>
@@ -544,7 +544,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             var formData = new FormData(event.target);
 
-            fetch('https://script.google.com/macros/s/AKfycbxlyGKkoOe5-LxSo1YP_AYRL7H7_x4sdBzkxm2-uDtFsezPKsVBFKkYzcgbd7UYzC8P/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbxmnLpABUbdR5JNJjmThPySGIxkRYj7ijGu29yrdABB5K71ubGwN1nW7Zh4NjmJxA/exec', {
                 method: 'POST',
                 body: formData
             }).then(response => response.json())
@@ -564,6 +564,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.querySelector('.place-order-btn').addEventListener('click', function() {
             alert('Order placed!');
         });
+	    
     </script>
 </body>
 </html>
