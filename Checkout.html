@@ -573,6 +573,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         function toggleMenu() {
             document.querySelector('.mobile-nav').classList.toggle('active');
         }
+	    const button = document.getElementById("myButton")
+const thankYou = document.getElementById("thankYou")
+
+//whenever the button is clicked, toggle the ".hidden" class
+button.addEventListener("click", ()=>{
+      thankYou.classList.toggle("hidden")
+})
     </script>		
 </body>
 </html>
