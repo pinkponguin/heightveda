@@ -399,9 +399,6 @@ user-select: none;
                 padding: 10px;
                 font-size: 0.8em;
             }
-	    .hidden{
-               display: none;
-            }
         }
     </style>
 
@@ -465,7 +462,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="main-container">
         <div class="container">
             <h2>Billing and Shipping Details</h2>
-            <form id="sheetdb-form" method="post" id="sheetdb-form">
+            <form id="sheetdb-form"  action="https://sheetdb.io/api/v1/2zso72rrl3abv" method="post" id="sheetdb-form">
                 <div class="form-group">
                     <label for="Name">Name <span class="required">*</span></label>
                     <input type="text" id="Name" name="data[Name]" required>
@@ -576,13 +573,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         function toggleMenu() {
             document.querySelector('.mobile-nav').classList.toggle('active');
         }
-	    const button = document.getElementById("myButton")
-const thankYou = document.getElementById("thankYou")
-
-//whenever the button is clicked, toggle the ".hidden" class
-button.addEventListener("click", ()=>{
-      thankYou.classList.toggle("hidden")
-})
     </script>		
 </body>
 </html>
