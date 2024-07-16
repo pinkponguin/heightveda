@@ -458,8 +458,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</a>
 		</div>
 				</div>
-				</div> 
-<div class="main-container">
+				</div>
+    <div class="main-container">
         <div class="container">
             <h2>Billing and Shipping Details</h2>
             <form id="sheetdb-form"  action="https://sheetdb.io/api/v1/2zso72rrl3abv" method="post" id="sheetdb-form">
@@ -482,7 +482,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="form-group">
                     <label for="state">State <span class="required">*</span></label>
                     <select id="state" name="data[state]" required>
-			<option value="Select">Select</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                         <option value="Assam">Assam</option>
@@ -536,35 +535,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="form-group">
                     <button type="submit">Submit</button>
                 </div>
-<div id="thank_you" style="display: none;">
-     <p>Thanks for filling out the form!</p>
-     <button data-dismiss="true" class="close-button">Close</button>
-</div>
-                </div>
             </form>
-		<script>
-var popupForm = document.querySelector("form");
-var popupButton = popupForm.querySelector("button");
-     popupButton.addEventListener('click', function (e) {
-          e.preventDefault();
-          var popupEmail = popupForm.querySelector("#email").value;
-          var popupName = popupForm.querySelector("#first_name").value;
-
-          var event_data = {
-               event_name: "popup_sent",
-               email: popupEmail,
-               name: popupName
-               }
-
-          window.top.UE.pageHit({'apiKey':put_api_key_of_your_app_here,
-               'email': popupEmail,
-               'name': popupName,
-               'event': event_data
-               });  
-          document.getElementById('form-group').style.display = 'none';
-          document.getElementById('thank_you').style.display = 'block';
-     });
-</script>
         </div>
         <div class="order-summary">
             <h3>Your Order</h3>
